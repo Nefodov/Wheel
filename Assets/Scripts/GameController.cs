@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(menuName = "Scriptable Objects/GameController")]
 public class GameController : MonoBehaviour
 {
 	public GameControllerInterface controllerInterface;

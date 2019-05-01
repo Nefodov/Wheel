@@ -19,8 +19,8 @@ public class SpinInput : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, 
 	public Vector2 startPosition;
 	public Vector2 previousPosition;
 	public Vector2 thirdPosition;
-
-	public ArrayPool<Vector3> tail = new ArrayPool<Vector3>(3);
+	
+	public ArrayPool<Vector3> tail = new ArrayPool<Vector3>(4);
 
 	private Vector2 minX, minY, maxX, maxY;
 
@@ -63,34 +63,80 @@ public class SpinInput : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, 
 		{
 			if (spinType == SpinType.FixedPoint)
 			{
-				Debug.DrawLine(startPosition, eventData.position);
-
-				var currentPos = eventData.position - startPosition;
-				float angle = Vector2.SignedAngle(previousPosition, currentPos);
-				previousPosition = currentPos;
-
-				inputWheel.transform.Rotate(Vector3.forward, angle, Space.Self);
-				onSpin.Invoke(angle / 360f);
+				FixedPointSpin(eventData);
 			}
 			if(spinType == SpinType.DynamicPoint)
 			{
-				tail.Add(eventData.position);
-
-				Debug.DrawLine(startPosition, eventData.position);
-
-				var currentPos = eventData.position - startPosition;
-				float angle = Vector2.SignedAngle(previousPosition, currentPos);
-				thirdPosition = previousPosition;
-				previousPosition = currentPos;
-
-
-				var newPos = Center(thirdPosition, previousPosition, currentPos);
-				inputWheel.transform.position = new Vector3(newPos.x + startPosition.x, newPos.y + startPosition.y, 0) ;
-				inputWheel.transform.Rotate(Vector3.forward, angle, Space.Self);
-				onSpin.Invoke(angle / 360f);
+				DynamicPointSpin(eventData);
 			}
 		}
 	}
+
+	private void FixedPointSpin(PointerEventData eventData)
+	{
+		Debug.DrawLine(startPosition, eventData.position);
+
+		var currentPos = eventData.position - startPosition;
+		float angle = Vector2.SignedAngle(previousPosition, currentPos);
+		previousPosition = currentPos;
+
+		inputWheel.transform.Rotate(Vector3.forward, angle, Space.Self);
+		onSpin.Invoke(angle / 360f);
+	}
+
+	private void DynamicPointSpin(PointerEventData eventData)
+	{
+		tail.Add(eventData.position);
+
+		//Debug.DrawLine(startPosition, eventData.position);
+
+		var currentPos = eventData.position - startPosition;
+		float angle = Vector2.SignedAngle(previousPosition, currentPos);
+
+		thirdPosition = previousPosition;
+		previousPosition = currentPos;
+
+
+		var newPos = Center(thirdPosition, previousPosition, currentPos);
+		inputWheel.transform.position = new Vector3(newPos.x + startPosition.x, newPos.y + startPosition.y, 0) ;
+
+		inputWheel.transform.Rotate(Vector3.forward, angle, Space.Self);
+		onSpin.Invoke(angle / 360f);
+	}
+
+	private void LateUpdate()
+	{
+		DrawTail();
+		DrawBezier();
+	}
+
+	private void DrawTail()
+	{
+		var count = tail.Count;
+
+		for (int i = 0; i < count-2; i+=2)
+		{
+			Debug.DrawLine(tail[i], tail[i + 1]);
+			Debug.DrawLine(tail[i+1], tail[i + 2]);
+			var center = Center(tail[i], tail[i + 1], tail[i + 2]);
+			Debug.DrawLine(tail[i], center);
+			//Debug.DrawLine(tail[i+1], center);
+		}
+
+	}
+
+	Vector3[] bezierPath = new Vector3[3];
+	private void DrawBezier()
+	{
+		if (tail.Count > 3) {
+			SimpleBezierPath.GetPath(tail[0], tail[1], tail[2], tail[3], ref bezierPath);
+		}else if (tail.Count > 2)
+		{
+			SimpleBezierPath.GetPath(tail[0], tail[1], tail[2], ref bezierPath);
+		}
+		SimpleBezierPath.DebugDrawPath(bezierPath);
+	}
+
 
 	private Vector3 Center(Vector3 p1,Vector3 p2, Vector3 p3)
 	{
