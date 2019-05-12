@@ -20,7 +20,7 @@ public class GameControllerInterface : ScriptableObject
 
 	public void OnSpikeHit()
 	{
-		SceneManager.LoadScene(0, LoadSceneMode.Single);
+		SceneManager.LoadScene(1, LoadSceneMode.Single);
 		Restart();
 	}
 
@@ -46,6 +46,5 @@ public class GameControllerInterface : ScriptableObject
 		goalInited.AddListener(AddGoal);
 		goalCollected.AddListener(GoalDone);
 		onSpikeHit.AddListener(OnSpikeHit);
-
 	}
 }

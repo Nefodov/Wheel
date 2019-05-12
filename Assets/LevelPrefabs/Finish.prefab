@@ -100,6 +100,16 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5455516971785458224, guid: 8a7fd7905672d4744858d63a4d9ec9da,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5455516971785458224, guid: 8a7fd7905672d4744858d63a4d9ec9da,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4549939770593706718, guid: 8a7fd7905672d4744858d63a4d9ec9da,
         type: 3}
       propertyPath: onTriggerEnter2D.m_PersistentCalls.m_Calls.Array.size

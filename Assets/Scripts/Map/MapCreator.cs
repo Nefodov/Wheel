@@ -19,11 +19,9 @@ namespace Map
 
 		public LevelObject ovverideLevel;
 
-
 		private void Awake()
 		{
-			levelData = ovverideLevel? ovverideLevel.levelData : level.levelData;
-			Deserialize();
+			Load();
 		}
 
 		[ContextMenu("Deserialize")]
@@ -61,11 +59,22 @@ namespace Map
 			}
 		}
 
+		[ContextMenu("Load")]
+		public void Load()
+		{
+			levelData = ovverideLevel ? ovverideLevel.levelData : level.levelData;
+			Deserialize();
+		}
+
 		[ContextMenu("Save")]
 		public void Save()
 		{
 			Serialize();
+
 			ovverideLevel.levelData.serializeItems = levelData.serializeItems;
+#if UNITY_EDITOR
+			UnityEditor.EditorUtility.SetDirty(ovverideLevel);
+#endif
 		}
 	}
 }
