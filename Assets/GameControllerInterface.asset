@@ -12,3 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43fe92b7f93d09d43a69b219358f2c9f, type: 3}
   m_Name: GameControllerInterface
   m_EditorClassIdentifier: 
+  onGoalsChange: {fileID: 11400000, guid: 62e5aeee108b8b642963e310ec5f4592, type: 2}
+  goalInited: {fileID: 11400000, guid: 0aa32464ebd6a47479529d7e41c16a98, type: 2}
+  goalCollected: {fileID: 11400000, guid: d528e6f59248fea42a2c8418d19cfc30, type: 2}
+  onSpikeHit: {fileID: 11400000, guid: c4e39377d6f34634f93e017305b4d7a0, type: 2}

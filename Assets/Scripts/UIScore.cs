@@ -2,22 +2,23 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using ValueObjects;
 
 public class UIScore : MonoBehaviour
 {
 	static readonly string format = "GoalsLeft: {0}";
 
 	public TextMeshProUGUI text;
-	public GameControllerInterface controllerInterface; 
+	public ActionIntObject onGoalsChange; 
 
 	private void OnEnable()
 	{
-		controllerInterface.onGoalsChange += SetScore;
+		onGoalsChange.AddListener(SetScore);
 	}
 
 	private void OnDisable()
 	{
-		controllerInterface.onGoalsChange -= SetScore;
+		onGoalsChange.RemoveListener(SetScore);
 	}
 
 	public void SetScore(int score)

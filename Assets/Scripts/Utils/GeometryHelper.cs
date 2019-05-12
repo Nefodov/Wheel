@@ -8,6 +8,8 @@ public class GeometryHelper : MonoBehaviour
 	public Transform p2;
 	public Transform p3;
 
+	public Transform x;
+
 	public float r = 0.1f;
 
 	private void OnDrawGizmos()
@@ -19,6 +21,9 @@ public class GeometryHelper : MonoBehaviour
 	{
 		DrawGizmos(true);
 	}
+
+	public Vector3[] bezierPath = new Vector3[3];
+	public float cs;
 
 	private void DrawGizmos(bool selected)
 	{
@@ -40,9 +45,17 @@ public class GeometryHelper : MonoBehaviour
 		Gizmos.DrawLine(center2, result2);
 
 		bool found;
-		Vector3 intersection = GetIntersectionPointCoordinates(center, result, center2, result2,out found);
+		Vector3 intersection = GetIntersectionPointCoordinates(center, result, center2, result2, out found);
 
-		Gizmos.DrawSphere(intersection, r);
+		if (x)
+		{
+			x.position = intersection;
+			x.localScale = new Vector3(cs, cs, cs) * Mathf.Min(Vector3.Distance(center, intersection), Vector3.Distance(center2, intersection));
+		}
+
+		SimpleBezierPath.GetPath(p1.position, p2.position, p3.position, ref bezierPath);
+		SimpleBezierPath.DebugDrawPath(bezierPath);
+		//Gizmos.DrawSphere(intersection, r);
 	}
 
 	public Vector2 GetIntersectionPointCoordinates(Vector2 A1, Vector2 A2, Vector2 B1, Vector2 B2, out bool found)
@@ -64,6 +77,13 @@ public class GeometryHelper : MonoBehaviour
 			B1.x + (B2.x - B1.x) * mu,
 			B1.y + (B2.y - B1.y) * mu
 		);
+	}
+
+	public void SetPosition(UnityEngine.EventSystems.BaseEventData eventData)
+	{
+		p3.position = p2.position;
+		p2.position = p1.position;
+		p1.position = ((UnityEngine.EventSystems.PointerEventData) eventData).position;
 	}
 
 

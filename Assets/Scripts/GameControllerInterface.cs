@@ -3,39 +3,49 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using ValueObjects;
 
 [CreateAssetMenu(menuName = "Scriptable Objects/GameController")]
 public class GameControllerInterface : ScriptableObject
 {
-	public Action<int> onGoalsChange;
+	[Header("Goal")]
+	public ActionIntObject onGoalsChange;
+	public ActionIntObject goalInited;
+	public ActionIntObject goalCollected;
+
+	[Header("Spike")]
+	public ActionVoidObject onSpikeHit;
 
 	private int goals;
 
-	public void OnGoalHit()
-	{
-		GoalDone();
-	}
-
 	public void OnSpikeHit()
 	{
-		Restart();
 		SceneManager.LoadScene(0, LoadSceneMode.Single);
+		Restart();
 	}
 
-	public void AddGoal()
+	public void AddGoal(int value)
 	{
-		goals++;
-		onGoalsChange?.Invoke(goals);
+		goals+= value;
+		onGoalsChange.Invoke(goals);
 	}
 
-	public void GoalDone()
+	public void GoalDone(int value)
 	{
-		goals--;
-		onGoalsChange?.Invoke(goals);
+		goals-= value;
+		onGoalsChange.Invoke(goals);
 	}
 	
 	public void Restart()
 	{
+		goalInited.RemoveListener(AddGoal);
+		goalCollected.RemoveListener(GoalDone);
+		onSpikeHit.RemoveListener(OnSpikeHit);
+
 		goals = 0;
+		goalInited.AddListener(AddGoal);
+		goalCollected.AddListener(GoalDone);
+		onSpikeHit.AddListener(OnSpikeHit);
+
 	}
 }
