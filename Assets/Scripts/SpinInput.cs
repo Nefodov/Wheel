@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
+using ValueObjects;
 
 public class SpinInput : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IDragHandler
 {
@@ -11,7 +12,8 @@ public class SpinInput : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, 
 
 	public SpinType spinType;
 	public GameObject inputWheel;
-	public SpinEvent onSpin;
+
+	public ActionFloatObject onSpin;
 
 	public float maxAngle = Vector2.kEpsilon;
 
@@ -106,8 +108,8 @@ public class SpinInput : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, 
 
 	private void LateUpdate()
 	{
-		DrawTail();
-		DrawBezier();
+		//DrawTail();
+		//DrawBezier();
 	}
 
 	private void DrawTail()

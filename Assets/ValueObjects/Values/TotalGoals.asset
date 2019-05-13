@@ -9,6 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 210580e02dbeb3149b363500ec6a5539, type: 3}
-  m_Name: New Action Void Object
+  m_Script: {fileID: 11500000, guid: b1744b07508aa354f85f7d95f4541173, type: 3}
+  m_Name: TotalGoals
   m_EditorClassIdentifier: 
+  value: 0

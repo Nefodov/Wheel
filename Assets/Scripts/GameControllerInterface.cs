@@ -8,6 +8,9 @@ using ValueObjects;
 [CreateAssetMenu(menuName = "Scriptable Objects/GameController")]
 public class GameControllerInterface : ScriptableObject
 {
+	public ActionVoidObject exitLose;
+	public ActionVoidObject exitWin;
+
 	[Header("Goal")]
 	public ActionIntObject onGoalsChange;
 	public ActionIntObject goalInited;
@@ -16,24 +19,28 @@ public class GameControllerInterface : ScriptableObject
 	[Header("Spike")]
 	public ActionVoidObject onSpikeHit;
 
-	private int goals;
+	public IntObject goalsTotal;
+	public IntObject goalsLeft;
 
 	public void OnSpikeHit()
 	{
-		SceneManager.LoadScene(1, LoadSceneMode.Single);
+		SceneManager.UnloadSceneAsync(1);
+		SceneManager.LoadScene(1, LoadSceneMode.Additive);
 		Restart();
 	}
 
 	public void AddGoal(int value)
 	{
-		goals+= value;
-		onGoalsChange.Invoke(goals);
+		goalsLeft.value += value;
+		goalsTotal.value += value;
+
+		onGoalsChange.Invoke(goalsLeft.value);
 	}
 
 	public void GoalDone(int value)
 	{
-		goals-= value;
-		onGoalsChange.Invoke(goals);
+		goalsLeft.value -= value;
+		onGoalsChange.Invoke(goalsLeft.value);
 	}
 	
 	public void Restart()
@@ -42,9 +49,21 @@ public class GameControllerInterface : ScriptableObject
 		goalCollected.RemoveListener(GoalDone);
 		onSpikeHit.RemoveListener(OnSpikeHit);
 
-		goals = 0;
+		goalsLeft.value = 0;
+		goalsTotal.value = 0;
 		goalInited.AddListener(AddGoal);
 		goalCollected.AddListener(GoalDone);
 		onSpikeHit.AddListener(OnSpikeHit);
+	}
+
+	public void ExitLose()
+	{
+		exitLose.Invoke();
+		SceneManager.UnloadSceneAsync(1);
+	}
+	public void ExitWin()
+	{
+		exitWin.Invoke();
+		SceneManager.UnloadSceneAsync(1);
 	}
 }
