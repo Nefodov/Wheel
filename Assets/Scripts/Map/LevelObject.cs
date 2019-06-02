@@ -6,4 +6,10 @@ using UnityEngine;
 public class LevelObject : ScriptableObject
 {
 	public LevelData levelData;
+
+	[ContextMenu("ToJson")]
+	public void ToJson()
+	{
+		Debug.Log(JsonUtility.ToJson(levelData));
+	}
 }

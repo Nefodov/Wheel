@@ -1,7 +1,4 @@
-﻿using System.Linq;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.U2D;
+﻿using UnityEngine;
 using System;
 
 namespace Map

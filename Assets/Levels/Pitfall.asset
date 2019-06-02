@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b37e0e107881f844cb3b21ae210d0416, type: 3}
+  m_Name: Pitfall
+  m_EditorClassIdentifier: 
+  levelData:
+    times:
+    - 10
+    - 15
+    - 20
+    percents:
+    - 1
+    - 0.8
+    - 0.5
+    serializeItems:
+    - name: Ground
+      data: '{"pos":{"x":0.0,"y":-2.5},"rotation":{"x":0.0,"y":0.0,"z":0.0,"w":1.0},"points":[{"pos":{"x":-2.0,"y":0.0},"tm":0,"lt":{"x":0.0,"y":0.0},"rt":{"x":0.0,"y":0.0}},{"pos":{"x":2.0,"y":0.0},"tm":0,"lt":{"x":0.0,"y":0.0},"rt":{"x":0.0,"y":0.0}}]}'
+    - name: Ground
+      data: '{"pos":{"x":7.0,"y":-3.0},"rotation":{"x":0.0,"y":0.0,"z":0.0,"w":1.0},"points":[{"pos":{"x":-2.0,"y":0.0},"tm":0,"lt":{"x":0.0,"y":0.0},"rt":{"x":0.0,"y":0.0}},{"pos":{"x":2.0,"y":0.0},"tm":0,"lt":{"x":0.0,"y":0.0},"rt":{"x":0.0,"y":0.0}}]}'
+    - name: Ground
+      data: '{"pos":{"x":14.0,"y":-3.5},"rotation":{"x":0.0,"y":0.0,"z":0.0,"w":1.0},"points":[{"pos":{"x":-2.0,"y":0.0},"tm":0,"lt":{"x":0.0,"y":0.0},"rt":{"x":0.0,"y":0.0}},{"pos":{"x":2.0,"y":0.0},"tm":0,"lt":{"x":0.0,"y":0.0},"rt":{"x":0.0,"y":0.0}}]}'
+    - name: Ground
+      data: '{"pos":{"x":21.0,"y":-4.0},"rotation":{"x":0.0,"y":0.0,"z":0.0,"w":1.0},"points":[{"pos":{"x":-2.0,"y":0.0},"tm":0,"lt":{"x":0.0,"y":0.0},"rt":{"x":0.0,"y":0.0}},{"pos":{"x":2.0,"y":0.0},"tm":0,"lt":{"x":0.0,"y":0.0},"rt":{"x":0.0,"y":0.0}}]}'
+    - name: Finish
+      data: '{"pos":{"x":21.020000457763673,"y":-3.0},"rotation":{"x":0.0,"y":0.0,"z":0.0,"w":1.0}}'
+    - name: Start
+      data: '{"pos":{"x":1.4600000381469727,"y":-1.551466941833496},"rotation":{"x":0.0,"y":0.0,"z":0.0,"w":1.0}}'
+    - name: Goal
+      data: '{"pos":{"x":17.5,"y":-13.109999656677246},"rotation":{"x":0.0,"y":0.0,"z":0.0,"w":1.0}}'
+    - name: Goal
+      data: '{"pos":{"x":10.5,"y":-9.029999732971192},"rotation":{"x":0.0,"y":0.0,"z":0.0,"w":1.0}}'
+    - name: Goal
+      data: '{"pos":{"x":3.5,"y":-5.202286243438721},"rotation":{"x":0.0,"y":0.0,"z":0.0,"w":1.0}}'
+    - name: Deadline
+      data: '{"pos":{"x":8.880000114440918,"y":-17.65999984741211},"rotation":{"x":0.0,"y":0.0,"z":0.0,"w":1.0}}'
