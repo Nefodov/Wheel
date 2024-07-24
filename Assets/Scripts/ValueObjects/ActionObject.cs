@@ -4,6 +4,8 @@ namespace ValueObjects
 {
 	public class ActionObject<T> : ValueObject<Action<T>>
 	{
+		private Action<T> value;
+
 		public void Invoke(T data)
 		{
 			if (value != null)
@@ -21,6 +23,11 @@ namespace ValueObjects
 		{
 			value -= listner;
 		}
-	}
+
+        public override object RawValue()
+        {
+			return value;
+		}
+    }
 }
 

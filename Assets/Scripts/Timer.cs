@@ -10,12 +10,12 @@ public class Timer : MonoBehaviour
 
 	public void RestartTimer()
 	{
-		time.value = 0;
+		time.Value = 0;
 	}
 
 	public void StartTimer()
 	{
-		time.value = 0;
+		time.Value = 0;
 		update = true;
 	}
 
@@ -32,6 +32,6 @@ public class Timer : MonoBehaviour
 	public void Update()
 	{
 		if(update)
-			time.value += Time.deltaTime;
+			time.Value += Time.deltaTime;
 	}
 }

@@ -31,16 +31,16 @@ public class GameControllerInterface : ScriptableObject
 
 	public void AddGoal(int value)
 	{
-		goalsLeft.value += value;
-		goalsTotal.value += value;
+		goalsLeft.Value += value;
+		goalsTotal.Value += value;
 
-		onGoalsChange.Invoke(goalsLeft.value);
+		onGoalsChange.Invoke(goalsLeft.Value);
 	}
 
 	public void GoalDone(int value)
 	{
-		goalsLeft.value -= value;
-		onGoalsChange.Invoke(goalsLeft.value);
+		goalsLeft.Value -= value;
+		onGoalsChange.Invoke(goalsLeft.Value);
 	}
 	
 	public void Restart()
@@ -49,8 +49,8 @@ public class GameControllerInterface : ScriptableObject
 		goalCollected.RemoveListener(GoalDone);
 		onSpikeHit.RemoveListener(OnSpikeHit);
 
-		goalsLeft.value = 0;
-		goalsTotal.value = 0;
+		goalsLeft.Value = 0;
+		goalsTotal.Value = 0;
 		goalInited.AddListener(AddGoal);
 		goalCollected.AddListener(GoalDone);
 		onSpikeHit.AddListener(OnSpikeHit);

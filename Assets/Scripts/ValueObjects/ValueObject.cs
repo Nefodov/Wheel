@@ -2,17 +2,12 @@
 
 namespace ValueObjects
 {
-	public class ValueObject<T> : ValueObject
+    public abstract class ValueObject<T> : ValueObjectBase
 	{
-		public T value;
+        public virtual T Value { get; set; }
+    }
 
-		public override object RawValue()
-		{
-			return value;
-		}
-	}
-
-	public abstract class ValueObject : ScriptableObject
+	public abstract class ValueObjectBase : ScriptableObject
 	{
 		public abstract object RawValue();
 	}

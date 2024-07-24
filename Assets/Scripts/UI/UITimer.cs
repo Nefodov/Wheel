@@ -20,9 +20,9 @@ public class UITimer : MonoBehaviour
 		if (frame <= 0)
 		{
 			frame += framesSkip;
-			if (displayedValue != time.value)
+			if (displayedValue != time.Value)
 			{
-				displayedValue = time.value;
+				displayedValue = time.Value;
 				text.text = displayedValue.ToString(format);
 			}
 		}

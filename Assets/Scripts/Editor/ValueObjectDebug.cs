@@ -15,7 +15,7 @@ namespace ValueObjects
 			window.titleContent = new GUIContent("ValueObjects");
 		}
 
-		public ValueObject targetObject;
+		public ValueObjectBase targetObject;
 
 		private void OnGUI()
 		{

@@ -22,16 +22,16 @@ public class UIWinPopup : MonoBehaviour
 
 	public void UpdateData()
 	{
-		int collected = goalsTotal.value - goalsLeft.value;
-		currentScore.text = string.Format(goalsFormat, collected, goalsTotal.value);
+		int collected = goalsTotal.Value - goalsLeft.Value;
+		currentScore.text = string.Format(goalsFormat, collected, goalsTotal.Value);
 		int length = scores.Length;
 		for (int i = 0; i < length; i++)
 		{
-			int ceil = Mathf.CeilToInt(goalsTotal.value * level.levelData.percents[i]);
+			int ceil = Mathf.CeilToInt(goalsTotal.Value * level.levelData.percents[i]);
 			scores[i].text = ceil.ToString();
 		}
 
-		currentTime.text = time.value.ToString(timeFormat);
+		currentTime.text = time.Value.ToString(timeFormat);
 		length = times.Length;
 		for (int i = 0; i < length; i++)
 		{

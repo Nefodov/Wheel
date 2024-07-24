@@ -6,6 +6,8 @@ namespace ValueObjects
 	[CreateAssetMenu(menuName = Constants.CREATE_MENU + "Action VoidObject")]
 	public class ActionVoidObject : ValueObject<Action>
 	{
+		private Action value;
+
 		public void Invoke()
 		{
 			if (value != null)
@@ -23,5 +25,10 @@ namespace ValueObjects
 		{
 			value -= listner;
 		}
-	}
+
+        public override object RawValue()
+        {
+            return value;
+        }
+    }
 }
