@@ -1,16 +1,30 @@
 fileFormatVersion: 2
 guid: 259baead2aa4480478c9f14fbeb898bd
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: kisspng-floating-island-creative-suspension-island-5a6d0e2041ad40.790876181517096480269_0
-    21300002: kisspng-floating-island-creative-suspension-island-5a6d0e2041ad40.790876181517096480269_1
-    21300004: kisspng-floating-island-creative-suspension-island-5a6d0e2041ad40.790876181517096480269_2
-    21300006: kisspng-floating-island-creative-suspension-island-5a6d0e2041ad40.790876181517096480269_3
-    21300008: kisspng-floating-island-creative-suspension-island-5a6d0e2041ad40.790876181517096480269_4
-    21300010: kisspng-floating-island-creative-suspension-island-5a6d0e2041ad40.790876181517096480269_5
-    21300012: kisspng-floating-island-creative-suspension-island-5a6d0e2041ad40.790876181517096480269_6
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: kisspng-floating-island-creative-suspension-island-5a6d0e2041ad40.790876181517096480269_0
+  - first:
+      213: 21300002
+    second: kisspng-floating-island-creative-suspension-island-5a6d0e2041ad40.790876181517096480269_1
+  - first:
+      213: 21300004
+    second: kisspng-floating-island-creative-suspension-island-5a6d0e2041ad40.790876181517096480269_2
+  - first:
+      213: 21300006
+    second: kisspng-floating-island-creative-suspension-island-5a6d0e2041ad40.790876181517096480269_3
+  - first:
+      213: 21300008
+    second: kisspng-floating-island-creative-suspension-island-5a6d0e2041ad40.790876181517096480269_4
+  - first:
+      213: 21300010
+    second: kisspng-floating-island-creative-suspension-island-5a6d0e2041ad40.790876181517096480269_5
+  - first:
+      213: 21300012
+    second: kisspng-floating-island-creative-suspension-island-5a6d0e2041ad40.790876181517096480269_6
   externalObjects: {}
-  serializedVersion: 7
+  serializedVersion: 13
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -27,9 +41,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -38,9 +55,9 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
-    aniso: -1
-    mipBias: -100
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -49,7 +66,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -61,11 +78,17 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
-  - serializedVersion: 2
+  - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -75,8 +98,10 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -86,19 +111,23 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: 65
+    textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
     buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -108,7 +137,22 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -120,9 +164,9 @@ TextureImporter:
         y: 362
         width: 434
         height: 268
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 44}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.75}
+      border: {x: 0, y: 0, z: 0, w: 67}
       outline: []
       physicsShape:
       - - {x: -217, y: -134}
@@ -132,6 +176,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 2d87c1cb5d6c0d844a7fad1dd1c880c4
+      internalID: 21300000
       vertices: []
       indices: 
       edges: []
@@ -152,6 +197,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: c3c299afa3227774d84ce456f780c8a5
+      internalID: 21300002
       vertices: []
       indices: 
       edges: []
@@ -172,6 +218,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 061b30e2c1328654f81c9c52f3f072aa
+      internalID: 21300004
       vertices: []
       indices: 
       edges: []
@@ -185,13 +232,35 @@ TextureImporter:
         width: 242
         height: 352
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
       spriteID: 70f3900c069f65943a20fd29024ea774
+      internalID: 21300006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kisspng-floating-island-creative-suspension-island-5a6d0e2041ad40.790876181517096480269_4
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 9
+        width: 237
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 101, y: 0, z: 125, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e9ccf99866494c0ab651896fbc8b67b
+      internalID: 1075090170
       vertices: []
       indices: 
       edges: []
@@ -200,13 +269,20 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 13b040a003526bf41800048a85d5a77f
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
-  spritePackingTag: 
+    secondaryTextures: []
+    nameFileIdTable:
+      kisspng-floating-island-creative-suspension-island-5a6d0e2041ad40.790876181517096480269_0: 21300000
+      kisspng-floating-island-creative-suspension-island-5a6d0e2041ad40.790876181517096480269_1: 21300002
+      kisspng-floating-island-creative-suspension-island-5a6d0e2041ad40.790876181517096480269_2: 21300004
+      kisspng-floating-island-creative-suspension-island-5a6d0e2041ad40.790876181517096480269_3: 21300006
+      kisspng-floating-island-creative-suspension-island-5a6d0e2041ad40.790876181517096480269_4: 1075090170
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
