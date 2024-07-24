@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using ValueObjects;
 
-[CreateAssetMenu(menuName = "Scriptable Objects/GameController")]
+[CreateAssetMenu(menuName = "ScriptableObjects/GameController")]
 public class GameControllerInterface : ScriptableObject
 {
 	public ActionVoidObject exitLose;

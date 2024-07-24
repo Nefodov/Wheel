@@ -14,6 +14,9 @@ namespace ValueObjects
 
 	public class Constants
 	{
-		public const string CREATE_MENU = "Scriptable Objects/Values/";
-	}
+		public const string CREATE_MENU = "ScriptableObjects/Values/";
+		public const string CREATE_MENU_CONST = "ScriptableObjects/Values/Const/";
+		public const string CREATE_MENU_ACTION = "ScriptableObjects/Values/Action/";
+
+    }
 }

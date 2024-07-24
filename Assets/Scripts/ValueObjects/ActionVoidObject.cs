@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace ValueObjects
 {
-	[CreateAssetMenu(menuName = Constants.CREATE_MENU + "Action VoidObject")]
+	[CreateAssetMenu(menuName = Constants.CREATE_MENU_ACTION + "Action VoidObject")]
 	public class ActionVoidObject : ValueObject<Action>
 	{
 		private Action value;

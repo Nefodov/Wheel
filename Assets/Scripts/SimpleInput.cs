@@ -29,7 +29,7 @@ public class SimpleInput : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 		slider.value = 0;
 	}
 
-	private void Update()
+	private void FixedUpdate()
 	{
 		if (active)
 		{

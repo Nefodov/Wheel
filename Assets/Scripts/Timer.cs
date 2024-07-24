@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class Timer : MonoBehaviour
 {
-	[Expanded]
 	public ValueObjects.FloatObject time;
 
 	private bool update = false;

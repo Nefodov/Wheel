@@ -9,7 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e5390e30f3b1944d90f133cd163d406, type: 3}
+  m_Script: {fileID: 11500000, guid: bf6c216d7736caf4c97d06b7a3680e09, type: 3}
   m_Name: LevelTimer
   m_EditorClassIdentifier: 
-  value: 0.3869992
