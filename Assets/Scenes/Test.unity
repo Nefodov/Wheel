@@ -1034,31 +1034,15 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1895010419}
-  - component: {fileID: 1895010418}
+  - component: {fileID: 1895010421}
+  - component: {fileID: 1895010420}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: TestMode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1895010418
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1895010417}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d11c89a56368ff47a261d08fd726daa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onStartEntered: {fileID: 0}
-  onFinishEntered: {fileID: 0}
-  timer: {fileID: 0}
-  controllerInterface: {fileID: 11400000, guid: d121cfa1d90e7e64789abd20313a0606,
-    type: 2}
 --- !u!4 &1895010419
 Transform:
   m_ObjectHideFlags: 0
@@ -1074,6 +1058,46 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1895010420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1895010417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 581e2b7aa9194f749824a35ab2469741, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1895010421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1895010417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be48af3aa1fef67418cc6737efee2b1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  action: {fileID: 11400000, guid: c4e39377d6f34634f93e017305b4d7a0, type: 2}
+  unityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1895010420}
+        m_TargetAssemblyTypeName: TestMode, Assembly-CSharp
+        m_MethodName: ResetScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2103368262
 GameObject:
   m_ObjectHideFlags: 0

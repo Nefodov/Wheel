@@ -49,8 +49,8 @@ public class GameControllerInterface : ScriptableObject
 		goalCollected.RemoveListener(GoalDone);
 		onSpikeHit.RemoveListener(OnSpikeHit);
 
-		goalsLeft.Value = 0;
-		goalsTotal.Value = 0;
+		goalsLeft.Reset();
+		goalsTotal.Reset();
 		goalInited.AddListener(AddGoal);
 		goalCollected.AddListener(GoalDone);
 		onSpikeHit.AddListener(OnSpikeHit);
