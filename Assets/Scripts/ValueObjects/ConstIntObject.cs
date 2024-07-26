@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace ValueObjects
 {
@@ -6,8 +7,8 @@ namespace ValueObjects
     public class ConstIntObject : IntObject
     {
         [SerializeField]
-        private int value;
+        private int constValue;
 
-        public override int Value { get => value; set => this.value = value; }
+        public override int Value => constValue;
     }
 }

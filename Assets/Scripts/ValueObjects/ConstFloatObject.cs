@@ -6,8 +6,8 @@ namespace ValueObjects
     public class ConstFloatObject : FloatObject
     {
         [SerializeField]
-        private float value;
+        private float constValue;
 
-        public override float Value { get => value; set => this.value = value; }
+        public override float Value => constValue; 
     }
 }
