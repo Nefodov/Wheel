@@ -29,18 +29,19 @@ namespace ValueObjects
         }
 
         /// <summary>
-        /// T1 - old Value;
-        /// T2 - new Value;
+        /// <c>&lt;<typeparamref name="T"/> oldValue, <typeparamref name="T"/> newValue&gt;</c>
         /// </summary>
-        public void AddListener(Action<T, T> listener)
+        public event Action<T, T> OnValueChanged
         {
-            listener.Invoke(Value, Value);
-            onValueChanged += listener;
-        }
-
-        public void RemoveListener(Action<T, T> listener)
-        {
-            onValueChanged -= listener;
+            add
+            {
+                value?.Invoke(Value, Value);
+                onValueChanged += value;
+            }
+            remove
+            {
+                onValueChanged -= value;
+            }
         }
     }
 

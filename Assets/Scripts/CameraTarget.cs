@@ -16,11 +16,11 @@ public class CameraTarget : MonoBehaviour
 
     private void Awake()
     {
-        target.AddListener(OnTargetChanged);
+        target.OnValueChanged += OnTargetChanged;
     }
 
     private void OnDestroy()
     {
-        target.RemoveListener(OnTargetChanged);
+        target.OnValueChanged -= OnTargetChanged;
     }
 }
