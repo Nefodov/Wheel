@@ -6,8 +6,8 @@ namespace ValueObjects
     public class ConstStringObject : StringObject
     {
         [SerializeField]
-        private string constValue;
+        private string _constValue;
 
-        public override string Value => constValue;
+        public override string Value => _constValue;
     }
 }

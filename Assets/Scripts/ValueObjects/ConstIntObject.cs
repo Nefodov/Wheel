@@ -7,8 +7,8 @@ namespace ValueObjects
     public class ConstIntObject : IntObject
     {
         [SerializeField]
-        private int constValue;
+        private int _constValue;
 
-        public override int Value => constValue;
+        public override int Value => _constValue;
     }
 }

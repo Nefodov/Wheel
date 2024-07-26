@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 279227533049213318}
   - component: {fileID: 2512264006990669402}
   - component: {fileID: 4995040414253354983}
+  - component: {fileID: 2839823844773839603}
   m_Layer: 0
   m_Name: Wheel
   m_TagString: Player
@@ -164,3 +165,31 @@ MonoBehaviour:
   wheel: {fileID: 2512264006990669402}
   spinFactor: 360
   eventObject: {fileID: 11400000, guid: 20971a190e303534fb3bebef4ab7c249, type: 2}
+--- !u!114 &2839823844773839603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9169689301461296869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8806bb3d6e126c5419ae8f36718de07a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onEnable:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 7c012acb0b48338468ddeaa0ae6bcab4, type: 2}
+        m_TargetAssemblyTypeName: ValueObjects.ValueObject`1[[UnityEngine.Transform,
+          UnityEngine
+        m_MethodName: set_Value
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 7584246178385846027}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

@@ -6,8 +6,8 @@ namespace ValueObjects
     public class ConstFloatObject : FloatObject
     {
         [SerializeField]
-        private float constValue;
+        private float _constValue;
 
-        public override float Value => constValue; 
+        public override float Value => _constValue; 
     }
 }

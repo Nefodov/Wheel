@@ -1,13 +1,46 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace ValueObjects
 {
     public abstract class ValueObject<T> : ValueObjectBase
 	{
-        public virtual T Value { get; set; }
-        public override void Reset()
+        protected T _value;
+        public virtual T Value
         {
+            get => _value;
+
+            set
+            {
+                T oldValue = Value;
+                _value = value;
+
+                onValueChanged?.Invoke(oldValue, value);
+            }
+        }
+
+        protected Action<T, T> onValueChanged;
+
+        public override object RawValue() => _value;
+        public override void Reset() 
+        {
+            onValueChanged = null;
             Value = default;
+        }
+
+        /// <summary>
+        /// T1 - old Value;
+        /// T2 - new Value;
+        /// </summary>
+        public void AddListener(Action<T, T> listener)
+        {
+            listener.Invoke(Value, Value);
+            onValueChanged += listener;
+        }
+
+        public void RemoveListener(Action<T, T> listener)
+        {
+            onValueChanged -= listener;
         }
     }
 

@@ -1,3 +1,4 @@
+using System;
 using UnityEditor;
 using UnityEngine;
 using ValueObjects;
@@ -34,6 +35,11 @@ public class Teleporter : MonoBehaviour
         {
             target.transform.position = destination.position;
         }
+    }
+
+    private void OnValueChanged(string arg1, string arg2)
+    {
+        throw new NotImplementedException();
     }
 
 #if UNITY_EDITOR

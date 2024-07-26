@@ -6,8 +6,8 @@ namespace ValueObjects
     public class ConstBoolObject : BoolObject
     {
         [SerializeField]
-        private bool constValue;
+        private bool _constValue;
 
-        public override bool Value => constValue;
+        public override bool Value => _constValue;
     }
 }
