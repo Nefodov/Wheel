@@ -6,7 +6,7 @@ using ValueObjects;
 public class Teleporter : MonoBehaviour
 {
     public StringObject targetTag;
-    public Transform destination;
+    public Vector3 destination;
     [Space]
     [Space]
     public bool resetVelocity;
@@ -29,23 +29,18 @@ public class Teleporter : MonoBehaviour
                 rb.angularVelocity = 0;
             }
 
-            rb.position = destination.position;
+            rb.position = destination;
         }
         else
         {
-            target.transform.position = destination.position;
+            target.transform.position = destination;
         }
-    }
-
-    private void OnValueChanged(string arg1, string arg2)
-    {
-        throw new NotImplementedException();
     }
 
 #if UNITY_EDITOR
     private void OnDrawGizmosSelected()
     {
-        Handles.DrawLine(transform.position, destination.position);
+        Handles.DrawLine(transform.position, destination);
     }
 #endif
 

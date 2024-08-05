@@ -2,7 +2,7 @@
 
 namespace Map
 {
-	[System.Serializable]
+    [System.Serializable]
 	public class MapData<T> where T : Component
 	{
 		public Vector2 pos;
