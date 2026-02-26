@@ -25,7 +25,7 @@ public class Teleporter : MonoBehaviour
         {
             if (resetVelocity)
             {
-                rb.velocity = Vector3.zero;
+                rb.linearVelocity = Vector3.zero;
                 rb.angularVelocity = 0;
             }
 

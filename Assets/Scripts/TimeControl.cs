@@ -39,7 +39,7 @@ public class TimeControl : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 			if (tail_position.Count > 0)
 			{
 				wheel.position = tail_position[0];
-				wheel.velocity = tail_velocity[0];
+				wheel.linearVelocity = tail_velocity[0];
 				tail_position.Remove();
 				tail_velocity.Remove();
 			}
@@ -47,7 +47,7 @@ public class TimeControl : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 		else
 		{
 			tail_position.Add(wheel.position);
-			tail_velocity.Add(wheel.velocity);
+			tail_velocity.Add(wheel.linearVelocity);
 		}
 
 		if (debugPoints)
