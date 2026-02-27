@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9213093410058028879}
-  - component: {fileID: 1243644583759990584}
+  - component: {fileID: 7757408381591229919}
   m_Layer: 5
   m_Name: ControllerInput
   m_TagString: Untagged
@@ -36,7 +36,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1243644583759990584
+--- !u!114 &7757408381591229919
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -45,8 +45,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 9177042602771236309}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9affb175e9e7a8f4faaffecb064463a8, type: 3}
+  m_Script: {fileID: 11500000, guid: 98994e29204fd7b41bda6be5e9699059, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Assembly-CSharp::InputToFloatAction
+  inputAction: {fileID: -1680190386980627800, guid: fb3b75f0c36e19440addd80867a90afd,
+    type: 3}
   eventObject: {fileID: 11400000, guid: 20971a190e303534fb3bebef4ab7c249, type: 2}
   k: -0.075
