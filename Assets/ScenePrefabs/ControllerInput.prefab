@@ -10,6 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 9213093410058028879}
   - component: {fileID: 7757408381591229919}
+  - component: {fileID: 8093932323729478263}
+  - component: {fileID: 8513011714781727110}
+  - component: {fileID: 1662124527674152140}
+  - component: {fileID: 5247556016161218817}
   m_Layer: 5
   m_Name: ControllerInput
   m_TagString: Untagged
@@ -52,3 +56,63 @@ MonoBehaviour:
     type: 3}
   eventObject: {fileID: 11400000, guid: 20971a190e303534fb3bebef4ab7c249, type: 2}
   k: -0.075
+--- !u!114 &8093932323729478263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9177042602771236309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bac42b7bbf993348a3a27f326cb92a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InputToVoidAction
+  inputAction: {fileID: -2099379676528639254, guid: fb3b75f0c36e19440addd80867a90afd,
+    type: 3}
+  eventObject: {fileID: 11400000, guid: 7976ff9140355a24f89b393aa87cd710, type: 2}
+--- !u!114 &8513011714781727110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9177042602771236309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bac42b7bbf993348a3a27f326cb92a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InputToVoidAction
+  inputAction: {fileID: 2082296132061207989, guid: fb3b75f0c36e19440addd80867a90afd,
+    type: 3}
+  eventObject: {fileID: 11400000, guid: c4e39377d6f34634f93e017305b4d7a0, type: 2}
+--- !u!114 &1662124527674152140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9177042602771236309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bac42b7bbf993348a3a27f326cb92a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InputToVoidAction
+  inputAction: {fileID: -8048129068861710564, guid: fb3b75f0c36e19440addd80867a90afd,
+    type: 3}
+  eventObject: {fileID: 11400000, guid: ddb50375e03efd44ab93b2d023ebe9af, type: 2}
+--- !u!114 &5247556016161218817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9177042602771236309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bac42b7bbf993348a3a27f326cb92a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InputToVoidAction
+  inputAction: {fileID: -9194100422004324841, guid: fb3b75f0c36e19440addd80867a90afd,
+    type: 3}
+  eventObject: {fileID: 11400000, guid: 730a81620ef149f4e8603e18a9abfbd1, type: 2}

@@ -3810,7 +3810,7 @@ SpriteRenderer:
   m_Size: {x: 15.36, y: 10.24}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_SpriteSortPoint: 0
 --- !u!4 &571817182
 Transform:
@@ -10366,72 +10366,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1778412649 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9177042602771236309, guid: b2632907718db3a46a075a735161ab8a,
-    type: 3}
-  m_PrefabInstance: {fileID: 3052287674242085426}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1778412651
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1778412649}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4bac42b7bbf993348a3a27f326cb92a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::InputToVoidAction
-  inputAction: {fileID: -2099379676528639254, guid: fb3b75f0c36e19440addd80867a90afd,
-    type: 3}
-  eventObject: {fileID: 11400000, guid: 7976ff9140355a24f89b393aa87cd710, type: 2}
---- !u!114 &1778412652
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1778412649}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4bac42b7bbf993348a3a27f326cb92a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::InputToVoidAction
-  inputAction: {fileID: 2082296132061207989, guid: fb3b75f0c36e19440addd80867a90afd,
-    type: 3}
-  eventObject: {fileID: 11400000, guid: c4e39377d6f34634f93e017305b4d7a0, type: 2}
---- !u!114 &1778412653
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1778412649}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4bac42b7bbf993348a3a27f326cb92a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::InputToVoidAction
-  inputAction: {fileID: -8048129068861710564, guid: fb3b75f0c36e19440addd80867a90afd,
-    type: 3}
-  eventObject: {fileID: 11400000, guid: ddb50375e03efd44ab93b2d023ebe9af, type: 2}
---- !u!114 &1778412655
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1778412649}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4bac42b7bbf993348a3a27f326cb92a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::InputToVoidAction
-  inputAction: {fileID: -9194100422004324841, guid: fb3b75f0c36e19440addd80867a90afd,
-    type: 3}
-  eventObject: {fileID: 11400000, guid: 730a81620ef149f4e8603e18a9abfbd1, type: 2}
 --- !u!1 &1783586775
 GameObject:
   m_ObjectHideFlags: 0
@@ -13404,23 +13338,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 9177042602771236309, guid: b2632907718db3a46a075a735161ab8a,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1778412651}
-    - targetCorrespondingSourceObject: {fileID: 9177042602771236309, guid: b2632907718db3a46a075a735161ab8a,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1778412652}
-    - targetCorrespondingSourceObject: {fileID: 9177042602771236309, guid: b2632907718db3a46a075a735161ab8a,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1778412653}
-    - targetCorrespondingSourceObject: {fileID: 9177042602771236309, guid: b2632907718db3a46a075a735161ab8a,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1778412655}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2632907718db3a46a075a735161ab8a, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
