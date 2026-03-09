@@ -4,7 +4,7 @@ using ValueObjects;
 public class WheelMoveController : MonoBehaviour
 {
 	public Rigidbody2D wheel;
-	public float spinFactor;
+	public FloatObject spinFactor;
 
 	public ActionFloatObject eventObject;
 
@@ -19,6 +19,6 @@ public class WheelMoveController : MonoBehaviour
 
 	public void OnSpin(float power)
 	{
-		wheel.AddTorque(power * spinFactor, ForceMode2D.Force);
+		wheel.AddTorque(power * spinFactor.Value, ForceMode2D.Force);
 	}
 }

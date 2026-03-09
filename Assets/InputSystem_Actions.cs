@@ -118,6 +118,24 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Boost"",
+                    ""type"": ""Button"",
+                    ""id"": ""ec1804ba-6a85-46bd-aeb2-e4343002db7c"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Slam"",
+                    ""type"": ""Button"",
+                    ""id"": ""f5c51e61-ad99-41a7-a916-6af9c502db07"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -195,6 +213,28 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": "";Gamepad"",
                     ""action"": ""Restart"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1918c96d-a657-49b8-b6ba-03ea56b644fc"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Gamepad"",
+                    ""action"": ""Boost"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9ee5cc73-1354-4d9b-8e0b-5bc66b47dcb1"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Gamepad"",
+                    ""action"": ""Slam"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -785,6 +825,8 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
         m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
         m_Player_Restart = m_Player.FindAction("Restart", throwIfNotFound: true);
+        m_Player_Boost = m_Player.FindAction("Boost", throwIfNotFound: true);
+        m_Player_Slam = m_Player.FindAction("Slam", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -881,6 +923,8 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Move;
     private readonly InputAction m_Player_Jump;
     private readonly InputAction m_Player_Restart;
+    private readonly InputAction m_Player_Boost;
+    private readonly InputAction m_Player_Slam;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
     /// </summary>
@@ -904,6 +948,14 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Player/Restart".
         /// </summary>
         public InputAction @Restart => m_Wrapper.m_Player_Restart;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/Boost".
+        /// </summary>
+        public InputAction @Boost => m_Wrapper.m_Player_Boost;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/Slam".
+        /// </summary>
+        public InputAction @Slam => m_Wrapper.m_Player_Slam;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -939,6 +991,12 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @Restart.started += instance.OnRestart;
             @Restart.performed += instance.OnRestart;
             @Restart.canceled += instance.OnRestart;
+            @Boost.started += instance.OnBoost;
+            @Boost.performed += instance.OnBoost;
+            @Boost.canceled += instance.OnBoost;
+            @Slam.started += instance.OnSlam;
+            @Slam.performed += instance.OnSlam;
+            @Slam.canceled += instance.OnSlam;
         }
 
         /// <summary>
@@ -959,6 +1017,12 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @Restart.started -= instance.OnRestart;
             @Restart.performed -= instance.OnRestart;
             @Restart.canceled -= instance.OnRestart;
+            @Boost.started -= instance.OnBoost;
+            @Boost.performed -= instance.OnBoost;
+            @Boost.canceled -= instance.OnBoost;
+            @Slam.started -= instance.OnSlam;
+            @Slam.performed -= instance.OnSlam;
+            @Slam.canceled -= instance.OnSlam;
         }
 
         /// <summary>
@@ -1280,6 +1344,20 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnRestart(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Boost" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnBoost(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Slam" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnSlam(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "UI" which allows adding and removing callbacks.

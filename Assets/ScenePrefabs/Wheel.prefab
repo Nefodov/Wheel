@@ -1,5 +1,91 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7630993269927137398
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7483031794566094810}
+  - component: {fileID: 7707290367404200457}
+  - component: {fileID: 4508875945549781199}
+  m_Layer: 9
+  m_Name: GroundCollision
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7483031794566094810
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7630993269927137398}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.05, y: 1.05, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7584246178385846027}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &7707290367404200457
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7630993269927137398}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 1.28
+--- !u!114 &4508875945549781199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7630993269927137398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf0ecf7178552aa42b071d343a602100, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DebugCollisionPoints2D
+  point: {fileID: 11400000, guid: cb3be4295735e02479121ae33de7259c, type: 2}
+  normal: {fileID: 11400000, guid: b56198c73157f3e469ca9206f992adca, type: 2}
+  grounded: {fileID: 11400000, guid: 8809787e25b5e6a4bbb21adebfaeccb0, type: 2}
+  drawNormal: 0
+  drawPoints: 0
 --- !u!1 &9169689301461296869
 GameObject:
   m_ObjectHideFlags: 0
@@ -13,8 +99,11 @@ GameObject:
   - component: {fileID: 279227533049213318}
   - component: {fileID: 2512264006990669402}
   - component: {fileID: 4995040414253354983}
+  - component: {fileID: 2619441376086353895}
   - component: {fileID: 2839823844773839603}
-  m_Layer: 0
+  - component: {fileID: 3968288504093981230}
+  - component: {fileID: 8966052757009308291}
+  m_Layer: 6
   m_Name: Wheel
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -33,7 +122,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 7483031794566094810}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2506215617840901280
@@ -171,8 +261,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wheel: {fileID: 2512264006990669402}
-  spinFactor: 360
+  spinFactor: {fileID: 11400000, guid: 15c31038eb1956a4eaf35844451384ae, type: 2}
   eventObject: {fileID: 11400000, guid: 20971a190e303534fb3bebef4ab7c249, type: 2}
+--- !u!114 &2619441376086353895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9169689301461296869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 782556d672af69442b94dc846d7ad2b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WheelJumpController
+  wheel: {fileID: 2512264006990669402}
+  jumpForce: {fileID: 11400000, guid: a0c086051079ce448a2f6b9365e5857a, type: 2}
+  point: {fileID: 11400000, guid: cb3be4295735e02479121ae33de7259c, type: 2}
+  normal: {fileID: 11400000, guid: b56198c73157f3e469ca9206f992adca, type: 2}
+  eventObject: {fileID: 11400000, guid: 7976ff9140355a24f89b393aa87cd710, type: 2}
 --- !u!114 &2839823844773839603
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,3 +308,35 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &3968288504093981230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9169689301461296869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 653a30e878779264f9a8521e73641e2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WheelBoostController
+  wheel: {fileID: 2512264006990669402}
+  boostForce: {fileID: 11400000, guid: 52b97b5d150dd03418784cb6dc55d8f8, type: 2}
+  grounded: {fileID: 11400000, guid: 8809787e25b5e6a4bbb21adebfaeccb0, type: 2}
+  eventObject: {fileID: 11400000, guid: ddb50375e03efd44ab93b2d023ebe9af, type: 2}
+--- !u!114 &8966052757009308291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9169689301461296869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d72f6eab28ac4dc459eb6c246ff357bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WheelSlamController
+  wheel: {fileID: 2512264006990669402}
+  slamForce: {fileID: 11400000, guid: 7fcb1fbbaa8e57f4b9133fddcf3fdcd9, type: 2}
+  grounded: {fileID: 11400000, guid: 8809787e25b5e6a4bbb21adebfaeccb0, type: 2}
+  eventObject: {fileID: 11400000, guid: 730a81620ef149f4e8603e18a9abfbd1, type: 2}

@@ -4,6 +4,7 @@ public class CollisionPoints2D : MonoBehaviour
 {
     public ValueObjects.Vector2Object point;
     public ValueObjects.Vector2Object normal;
+    public ValueObjects.BoolObject grounded;
 
     [Space]
     public bool drawNormal;
@@ -49,6 +50,8 @@ public class CollisionPoints2D : MonoBehaviour
             point.Value = avgPoint;
             normal.Value = avgNormal;
 
+            grounded.Value = true;
+
             if (drawNormal)
                 Debug.DrawRay(avgPoint, -avgNormal, Color.blue);
         }
@@ -57,6 +60,8 @@ public class CollisionPoints2D : MonoBehaviour
             point.Value = contacts[0].point;
             normal.Value = contacts[0].normal;
 
+            grounded.Value = true;
+
             if (drawNormal)
                 Debug.DrawRay(contacts[0].point, -contacts[0].normal, Color.blue);
         }
@@ -64,6 +69,8 @@ public class CollisionPoints2D : MonoBehaviour
         {
             point.Value = Vector2.zero;
             normal.Value = Vector2.zero;
+
+            grounded.Value = false;
         }
 
         contactCount = 0;

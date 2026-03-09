@@ -5,7 +5,7 @@ public class WheelJumpController : MonoBehaviour
 {
     public Rigidbody2D wheel;
 
-	public float jumpForce;
+	public FloatObject jumpForce;
 
 	public Vector2Object point;
 	public Vector2Object normal;
@@ -23,6 +23,6 @@ public class WheelJumpController : MonoBehaviour
 
     public void OnJump()
     {
-        wheel.AddForce(normal.Value * jumpForce, ForceMode2D.Impulse);
+        wheel.AddForce(normal.Value * jumpForce.Value, ForceMode2D.Impulse);
     }
 }
